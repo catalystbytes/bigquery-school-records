@@ -30,7 +30,7 @@ Before inserting data, ensure that the tables are created within the school_reco
 
 ## Create Students Table
 ```sql
-CREATE TABLE `dbt-learn-360010.school_records.Students` (
+CREATE OR REPLACE TABLE `dbt-learn-360010.school_records.Students` (
   student_id INT64,
   first_name STRING,
   last_name STRING,
@@ -44,7 +44,7 @@ CREATE TABLE `dbt-learn-360010.school_records.Students` (
 
 ## Create Teachers Table
 ```sql
-CREATE TABLE `dbt-learn-360010.school_records.Teachers` (
+CREATE OR REPLACE TABLE `dbt-learn-360010.school_records.Teachers` (
   teacher_id INT64,
   first_name STRING,
   last_name STRING,
@@ -57,7 +57,7 @@ CREATE TABLE `dbt-learn-360010.school_records.Teachers` (
 
 ## Create Classes Table
 ```sql
-CREATE TABLE `dbt-learn-360010.school_records.Classes` (
+CREATE OR REPLACE TABLE `dbt-learn-360010.school_records.Classes` (
   class_id INT64,
   class_name STRING,
   teacher_id INT64,
@@ -67,7 +67,7 @@ CREATE TABLE `dbt-learn-360010.school_records.Classes` (
 
 ## Create Terms Table
 ```sql
-CREATE TABLE `dbt-learn-360010.school_records.Terms` (
+CREATE OR REPLACE TABLE `dbt-learn-360010.school_records.Terms` (
   term_id STRING,
   term_name STRING,
   start_date DATE,
@@ -77,7 +77,7 @@ CREATE TABLE `dbt-learn-360010.school_records.Terms` (
 
 ## Create Grades Table
 ```sql
-CREATE TABLE `dbt-learn-360010.school_records.Grades` (
+CREATE OR REPLACE TABLE `dbt-learn-360010.school_records.Grades` (
   grade_id INT64,
   student_id INT64,
   class_id INT64,
