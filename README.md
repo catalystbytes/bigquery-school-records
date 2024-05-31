@@ -264,23 +264,15 @@ WHERE
 
 # update_grades.sql
 ```sql
--- Update term_id in Grades Table
+-- Update grade of 2 grade_id in Grades Table
 UPDATE `dbt-learn-360010.school_records.Grades`
 SET
-  term_id = CASE 
-              WHEN term_id = '2021T1' THEN '2022T1'
-              WHEN term_id = '2022T1' THEN '2023T1'
-              WHEN term_id = '2022T2' THEN '2023T2'
-              WHEN term_id = '2022T3' THEN '2023T3'
-              WHEN term_id = '2023T1' THEN '2024T1'
-              ELSE term_id
+  grade = CASE 
+              WHEN grade = 4 THEN 5
             END
 WHERE 
-  term_id IN ('2021T1', '2022T1', '2022T2', '2022T3', '2023T1');
+  grade_id IN (2532, 1152);
 
-
-  term_id STRING
-);
 ```
 
 ### Running SQL Scripts
