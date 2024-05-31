@@ -268,11 +268,12 @@ WHERE
 UPDATE `dbt-learn-360010.school_records.Grades`
 SET
   grade = CASE 
-              WHEN grade = 4 THEN 5
-            END
+    WHEN grade is not null THEN 5
+    WHEN grade is null THEN 5
+    ELSE grade
+  END
 WHERE 
   grade_id IN (2532, 1152);
-
 ```
 
 ### Running SQL Scripts
